@@ -1,8 +1,23 @@
 var Cell = React.createClass({
 	render: function() {
+		// Content of the cell
+		var content;
+
+		var classes = App.classes(this.props.value);
+
+		var class_array = classes.split(' ');
+
+		if(class_array.indexOf('cannon_ball') !== -1) {
+			content = "●";
+		}
+
+		if(class_array.indexOf('rock') !== -1) {
+			content = '×';
+		}
+
 		return (
-			<div className="cell">
-				{this.props.value}
+			<div className={classes}>
+				{content}
 			</div>
 		);
 	}
