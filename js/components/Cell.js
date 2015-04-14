@@ -3,7 +3,7 @@ var Cell = React.createClass({
 		// Content of the cell
 		var content;
 
-		var classes = App.classes(this.props.value);
+		var classes = BlockadeSim.classes(this.props.value);
 
 		var class_array = classes.split(' ');
 
