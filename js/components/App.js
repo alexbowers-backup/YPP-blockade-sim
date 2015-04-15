@@ -229,4 +229,10 @@ var App = React.createClass({
 
 });
 
-React.render(<App />, document.body);
+var elements = document.getElementsByTagName('App');
+
+var elements_array = Array.prototype.slice.call(elements);
+
+elements_array.map(function(element) {
+    React.render(<App />, element);
+});
