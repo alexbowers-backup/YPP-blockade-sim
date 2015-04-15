@@ -29,7 +29,8 @@ var App = React.createClass({
             game_started: false,
             game_started_text: false,
             game_started_button_enabled: true,
-            is_user: true,
+            is_user: false,
+            is_watcher: false,
             pirate_number: 0,
             user_form: {
                 temp_username: '',
@@ -75,8 +76,6 @@ var App = React.createClass({
             value += grid[user.position.y][user.position.x];
 
             grid[user.position.y][user.position.x] = value;
-
-            console.log(value);
         });
 
         this.setState({grid: grid});
@@ -164,7 +163,6 @@ var App = React.createClass({
 
         this.drawGrid();
     },
-
     startGame: function() {
             this.setState({game_started: true, game_started_button_enabled: false, game_started_text: 'Game has started'});
     },
@@ -202,7 +200,7 @@ var App = React.createClass({
          *
          */
 
-        if(!this.state.game_started && !this.state.is_user) {
+        if(!this.state.game_started && !this.state.is_user && !this.state.is_watcher) {
             return (
                 <div>
                     <h1>You need to enter your pirates name</h1>
