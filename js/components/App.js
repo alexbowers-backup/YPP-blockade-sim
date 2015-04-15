@@ -172,9 +172,7 @@ var App = React.createClass({
         } else {
             this.setState({user_form: {enabled: false, temp_username: e.target.value}});
         }
-
     },
-
     render: function () {
         /**
          * 1 = Open Water
