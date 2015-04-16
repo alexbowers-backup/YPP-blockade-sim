@@ -78,3 +78,9 @@ var BlockadeSim = new function () {
         return class_names.join(' ');
     };
 };
+
+var socket = io('http://localhost:3000');
+
+socket.on('shutdown', function(message) {
+    console.log('Shutdown event fired');
+});
